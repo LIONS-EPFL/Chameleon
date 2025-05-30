@@ -1,19 +1,27 @@
-# CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning
+# 🦎 CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning
 
 This is the official code for [CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning]() accepted at ICML 2025.
 
+## What is CHAMELEON?
+
+CHAMELEON is an efficient, data-centric data mixing framework that leverages Kernel Ridge Leverage Scores (KRLS) to quantify domain representativeness from embedded data. Inverse KRLS-based domain weights are used to emphasize general knowledge during pretraining, while KRLS-based weights are employed to highlight domain-specific uniqueness during finetuning.
 
 <img src="./pipeline.png">
 
-CHAMELEON is an efficient, data-centric framework that leverages Kernel Ridge Leverage Scores (KRLS) to quantify domain representativeness from embedded data. Inverse KRLS-based domain weights are used to emphasize general knowledge during pretraining, while KRLS-based weights are employed to highlight domain-specific uniqueness during finetuning.
 
 CHAMELEON addresses three key challenges in data mixing:
 - **Universal Generalization:** It aims to improve universal generalization, which is a fundamental goal of domain reweighting.
-- **Adaptability to Domain Modifications:** The framework can adapt to domain modifications, a crucial feature given that data naturally evolves between preparation and LLM training.
-- **Handling Different Training Stages:** It handles different training stages, including both pretraining and fine-tuning.
+- **Transfer to New Datasets:** The framework can adapt to domain modifications, a crucial feature given that data naturally evolves between preparation and LLM training.
+- **Handles Both Pretraining and Finetuning:** It handles different training stages, including both pretraining and fine-tuning.
 
+## How to Use CHAMELEON?
 
-## Setup
+1. Train a small proxy model on your dataset with uniform domain weights.
+2. Extract domain embeddings from the proxy model.
+3. Compute KRLS scores $S_i$ based on the domain embeddings.
+4. Use the computed KRLS scores to generate domain weights $\alpha_i$ for pretraining and finetuning.
+
+## Environment Setup
 ```
 conda create -n chameleon python=3.8
 conda activate chameleon
@@ -76,16 +84,15 @@ Specifically, our experiments utilize modifications of the following repositorie
 * **RegMix**: obtaining RegMix domain weights on SlimPajama.
     * Repository: `https://github.com/sail-sg/regmix`
 
+## Cite
+If you use this code, please cite the corresponding work:
 
-
-
-
-<!-- ## Citation
 ```
-@inproceedings{xie2024sampa,
-  title={{SAMPa}: Sharpness-aware Minimization Parallelized},
-  author={Xie, Wanyun and Pethick, Thomas and Cevher, Volkan},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2024}
+@InProceedings{xie2025,
+  title = {Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning},
+  author = {Xie, Wanyun and Tonin, Francesco and Cevher, Volkan},
+  booktitle = {The 42nd International Conference on Machine Learning},
+  year = {2025},
+  organization= {PMLR}
 }
-```  -->
+```
