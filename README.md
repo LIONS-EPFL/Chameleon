@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 ## Domain Weights
 
-Domian weights of Slimpajama can be extracted by `domain_weights.py`. Note that we use Slimpajama-6b dataset as an example here.
+Domian weights of Slimpajama can be extracted by `compute_chameleon_weights.py`. Note that we use Slimpajama-6b dataset as an example here.
 
 ### Key Concepts
 
