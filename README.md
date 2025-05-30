@@ -88,7 +88,7 @@ Specifically, our experiments utilize modifications of the following repositorie
 If you use this code, please cite the corresponding work:
 
 ```
-@InProceedings{xie2025,
+@InProceedings{xie2025chameleon,
   title = {Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning},
   author = {Xie, Wanyun and Tonin, Francesco and Cevher, Volkan},
   booktitle = {The 42nd International Conference on Machine Learning},
