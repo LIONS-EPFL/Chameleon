@@ -128,7 +128,7 @@ def compute_ridge_leverage_scores(K, lambda_reg=10):
     
     # Extract diagonal elements as leverage scores.
     leverage_scores = np.diag(product)
-    
+    leverage_scores = leverage_scores / np.sum(leverage_scores)
     return leverage_scores
 
 def load_and_prepare_embeddings(folder_path, 
