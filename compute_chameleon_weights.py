@@ -10,7 +10,6 @@ from slimpajama import get_slimpajama_6b
 from utils import (
     initialize_model_and_tokenizer,
     get_random_samples,
-    get_gpt2_embeddings,
     get_gpt2_embeddings_batched,
     compute_domain_affinity_matrix,
     compute_ridge_leverage_scores,
