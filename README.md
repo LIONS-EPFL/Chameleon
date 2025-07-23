@@ -1,6 +1,6 @@
 # 🦎 CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning
 
-This is the official code for [CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning]() accepted at ICML 2025.
+This is the official code for [CHAMELEON: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning](https://arxiv.org/abs/2505.24844) accepted at ICML 2025.
 
 ## What is CHAMELEON?
 
